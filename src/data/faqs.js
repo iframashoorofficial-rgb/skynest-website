@@ -41,12 +41,12 @@ export const faqs = [
   {
     question: 'How do I enquire about a room?',
     answer:
-      'Use the enquiry form on our Contact page, email hello@skynest.example or call +971 50 000 0000 (Monday–Saturday, 9:00 AM–6:00 PM). If you click "Enquire Now" on a package, the form fills in that package for you.',
+      'Use the enquiry form on our Contact page, email hello@skynest.example or call +65 6000 0000 (Monday–Saturday, 9:00 AM–6:00 PM). If you click "Enquire Now" on a package, the form fills in that package for you.',
   },
   {
     question: 'Can corporate clients arrange accommodation for employees?',
     answer:
-      'Yes. SkyNest welcomes enquiries from companies relocating staff to Dubai. Get in touch to discuss the number of employees, dates and which package suits them. All arrangements and terms are confirmed directly with SkyNest.',
+      'Yes. SkyNest welcomes enquiries from companies relocating staff to Singapore. Get in touch to discuss the number of employees, dates and which package suits them. All arrangements and terms are confirmed directly with SkyNest.',
   },
   {
     question: 'Are shared working facilities available?',
