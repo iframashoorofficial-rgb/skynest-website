@@ -6,7 +6,7 @@ export const packages = [
   {
     id: 'essential',
     name: 'Essential Living',
-    price: 1800,
+    price: 400,
     bestFor: 'Students and anyone on a tight budget',
     description:
       'A comfortable shared room with all the everyday basics covered, so you can settle into a new city without overspending.',
@@ -23,7 +23,7 @@ export const packages = [
   {
     id: 'comfort',
     name: 'Comfort Living',
-    price: 2800,
+    price: 450,
     popular: true,
     bestFor: 'Young professionals and remote workers',
     description:
@@ -42,7 +42,7 @@ export const packages = [
   {
     id: 'premium',
     name: 'Premium Living',
-    price: 4200,
+    price: 500,
     bestFor: 'Digital nomads and corporate stays',
     description:
       'A larger private room with a dedicated workspace, co-working access and our rooftop lounge for the most comfortable stay.',
@@ -64,7 +64,7 @@ export const packages = [
 // true = included, false = not included, text = shows that text.
 // The order of values matches the packages above: [Essential, Comfort, Premium].
 export const comparisonRows = [
-  { label: 'Monthly price', values: ['AED 1,800', 'AED 2,800', 'AED 4,200'] },
+  { label: 'Monthly price', values: ['S$400', 'S$450', 'S$500'] },
   { label: 'Room type', values: ['Shared room', 'Private room', 'Larger private room'] },
   { label: 'Fully furnished', values: [true, true, true] },
   { label: 'High-speed Wi-Fi', values: [true, true, true] },
@@ -78,5 +78,5 @@ export const comparisonRows = [
   { label: 'Rooftop lounge', values: [false, false, true] },
 ];
 
-// Formats 1800 as "AED 1,800"
-export const formatPrice = (price) => `AED ${price.toLocaleString('en-US')}`;
+// Formats 450 as "S$450"
+export const formatPrice = (price) => `S$${price.toLocaleString('en-US')}`;
