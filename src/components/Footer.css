@@ -1,0 +1,227 @@
+/* ---------- Footer (reorganised in Version 2) ---------- */
+.site-footer {
+  background: var(--navy);
+  color: #dbe3ed;
+  padding-top: 56px;
+}
+
+/* 1. Enquiry strip */
+.footer-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 40px;
+  margin-bottom: 56px;
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: 20px;
+  background: #24364f;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-cta-title {
+  margin-bottom: 6px;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  color: #ffffff;
+}
+
+.footer-cta p {
+  margin: 0;
+  color: #dbe3ed;
+}
+
+.footer-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* White-outline button for dark backgrounds */
+.btn--on-dark {
+  border-color: #ffffff;
+  color: #ffffff;
+  background: transparent;
+}
+
+.btn--on-dark:hover {
+  background: #ffffff;
+  color: var(--navy);
+}
+
+/* Main grid: brand | pages | packages | contact | hours */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1.1fr 1.3fr 1fr;
+  gap: 40px 32px;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.footer-brand p {
+  max-width: 300px;
+  margin: 0;
+}
+
+.footer-heading {
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--teal-on-dark);
+  display: inline-block;
+  font-size: 1.05rem;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.footer-links,
+.footer-hours {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Links have a taller tap area (at least 40px) */
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+}
+
+.site-footer a {
+  color: #dbe3ed;
+  text-decoration: underline;
+  text-decoration-color: rgba(219, 227, 237, 0.35);
+  text-underline-offset: 4px;
+}
+
+.site-footer a:hover {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+.site-footer a.btn {
+  text-decoration: none;
+}
+
+/* Contact details: icon + label + value */
+.footer-contact {
+  display: grid;
+  gap: 16px;
+  font-style: normal;
+}
+
+.footer-contact > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-contact p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact .icon {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--teal-on-dark);
+}
+
+.footer-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sky-on-dark);
+}
+
+.footer-hours {
+  gap: 14px;
+}
+
+.footer-hours li {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-hours li span:last-child {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 32px;
+  margin-top: 48px;
+  padding-top: 24px;
+  padding-bottom: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.9rem;
+  color: #c9d3e0;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+.icon--up {
+  transform: rotate(180deg);
+}
+
+/* Focus outline that is visible on the dark background */
+.site-footer :focus-visible {
+  outline-color: var(--teal-on-dark);
+}
+
+@media (max-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-brand p {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+  }
+
+  .footer-cta-actions,
+  .footer-cta-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Contact details and hours get the full width; the two link lists stay side by side */
+  .footer-grid > .footer-col:nth-child(4),
+  .footer-grid > .footer-col:nth-child(5) {
+    grid-column: 1 / -1;
+  }
+}

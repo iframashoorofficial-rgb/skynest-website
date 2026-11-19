@@ -1,0 +1,187 @@
+/* ---------- Enquiry form ---------- */
+.form-required-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
+.enquiry-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.required {
+  color: var(--error);
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.enquiry-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.enquiry-form input:hover,
+.enquiry-form select:hover,
+.enquiry-form textarea:hover {
+  border-color: var(--sky);
+}
+
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus {
+  border-color: var(--teal);
+}
+
+/* Fields with a problem: red, thicker border AND an error message with an icon */
+.enquiry-form [aria-invalid='true'] {
+  border: 2px solid var(--error);
+  background: var(--error-tint);
+}
+
+.field-hint {
+  margin: 6px 0 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.field-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--error);
+}
+
+.field-error .icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Box listing all problems at the top of the form */
+.error-summary {
+  margin-bottom: 24px;
+  padding: 18px 22px;
+  border: 2px solid var(--error);
+  border-radius: 12px;
+  background: var(--error-tint);
+}
+
+.error-summary h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  color: var(--error);
+}
+
+.error-summary ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.error-summary li + li {
+  margin-top: 4px;
+}
+
+.error-summary a {
+  color: var(--error);
+  font-weight: 500;
+}
+
+.form-demo-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Demo confirmation box */
+.form-success {
+  padding: 32px;
+  border: 2px solid var(--success);
+  border-radius: var(--radius);
+  background: var(--success-tint);
+}
+
+.form-success h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--success);
+}
+
+.demo-tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.demo-note {
+  padding: 14px 16px;
+  border-left: 4px solid var(--navy);
+  border-radius: 0 8px 8px 0;
+  background: #ffffff;
+}
+
+/* V2: larger Send button */
+.enquiry-form button[type='submit'] {
+  min-height: 56px;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* V2: larger fields and labels on phones */
+  .enquiry-form input,
+  .enquiry-form select,
+  .enquiry-form textarea {
+    min-height: 54px;
+    font-size: 1.0625rem;
+  }
+
+  .enquiry-form label {
+    font-size: 1.05rem;
+  }
+
+  .form-success {
+    padding: 24px;
+  }
+}

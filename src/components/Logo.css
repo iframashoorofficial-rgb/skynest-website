@@ -1,0 +1,47 @@
+/* ---------- Logo ---------- */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-mark {
+  width: 44px;
+  height: 37px;
+  flex-shrink: 0;
+}
+
+.logo-roof { stroke: var(--navy); }
+.logo-nest { stroke: var(--teal); }
+.logo-bird { stroke: var(--sky); }
+
+.logo-text {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.45rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+
+.logo-text span {
+  color: var(--teal);
+}
+
+.logo-text small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Light version for dark backgrounds */
+.logo--light .logo-roof { stroke: #ffffff; }
+.logo--light .logo-nest { stroke: var(--teal-on-dark); }
+.logo--light .logo-bird { stroke: var(--sky-on-dark); }
+.logo--light .logo-text { color: #ffffff; }
+.logo--light .logo-text span { color: var(--teal-on-dark); }
+.logo--light .logo-text small { color: #b8c4d4; }

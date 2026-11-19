@@ -1,0 +1,585 @@
+/* =========================================================
+   SkyNest – global styles
+   1. Colours and settings (CSS variables)
+   2. Basic page styles
+   3. Layout helpers
+   4. Buttons
+   5. Cards and lists
+   6. Page banner and hero
+   7. Accessibility helpers
+   8. Mobile contact bar (new in Version 2)
+   Version 2 changes are marked "V2".
+   ========================================================= */
+
+/* ---------- 1. Colours and settings ---------- */
+:root {
+  --navy: #1b2a41;          /* main dark colour */
+  --charcoal: #2b313c;
+  --text: #2f3644;          /* body text – V2: slightly darker for contrast */
+  --muted: #4b5363;         /* softer text – V2: darker (was #5a6272) for contrast */
+
+  --sky: #3d6f99;           /* muted sky blue – headings */
+  --sky-tint: #eaf2f8;
+  --sky-on-dark: #a9cbe6;   /* sky blue that is readable on navy */
+
+  --teal: #0f766e;          /* accent – buttons and links */
+  --teal-dark: #0b5a54;
+  --teal-tint: #e3f3f0;
+  --teal-on-dark: #7fd3c7;  /* teal that is readable on navy */
+
+  --bg: #faf9f6;            /* off-white page background */
+  --surface: #ffffff;
+  --border: #e2e5ea;
+  --border-strong: #b9c0cb;
+
+  --error: #b42318;
+  --error-tint: #fef3f2;
+  --success: #067647;
+  --success-tint: #ecfdf3;
+
+  --font-head: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius: 16px;
+  --shadow: 0 1px 2px rgba(27, 42, 65, 0.05), 0 8px 24px rgba(27, 42, 65, 0.06);
+  --shadow-hover: 0 2px 4px rgba(27, 42, 65, 0.08), 0 16px 36px rgba(27, 42, 65, 0.12);
+  --header-height: 76px;
+  --mobile-bar-height: 0px; /* V2: set on small screens, where the contact bar is shown */
+}
+
+/* ---------- 2. Basic page styles ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* stops the sticky header covering a section we jump to */
+  scroll-padding-top: calc(var(--header-height) + 16px);
+  /* V2: stops the fixed mobile contact bar covering a focused link or field */
+  scroll-padding-bottom: calc(var(--mobile-bar-height) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.6em;
+  font-family: var(--font-head);
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--sky);
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: var(--sky);
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+/* An h2 that looks like a smaller heading (used in contact cards) */
+.h3-size {
+  font-size: 1.25rem;
+  color: var(--navy);
+}
+
+a {
+  color: var(--teal);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--teal-dark);
+}
+
+main:focus {
+  outline: none;
+}
+
+/* ---------- 3. Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.section {
+  padding-block: clamp(56px, 8vw, 96px);
+}
+
+.section--white {
+  background: var(--surface);
+}
+
+.section--sky {
+  background: var(--sky-tint);
+}
+
+.section-head {
+  max-width: 700px;
+  margin-bottom: 44px;
+}
+
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-head p {
+  margin: 0;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-family: var(--font-head);
+  font-size: 0.85rem; /* V2: was 0.8rem */
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: var(--muted);
+}
+
+/* Two columns: text and a picture */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.split-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.center-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+/* ---------- 4. Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 26px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn--primary {
+  background: var(--teal);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: var(--teal-dark);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.25);
+}
+
+.btn--outline {
+  background: transparent;
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.btn--outline:hover {
+  background: var(--teal-tint);
+  color: var(--teal-dark);
+}
+
+.btn--light {
+  background: #ffffff;
+  color: var(--navy);
+}
+
+.btn--light:hover {
+  background: var(--sky-tint);
+  color: var(--navy);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* V2: a bigger button for the most important actions (Contact / Enquire) */
+.btn--large {
+  min-height: 56px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+}
+
+.btn--small {
+  min-height: 48px; /* V2: was 44px */
+  padding: 8px 18px;
+  font-size: 0.92rem;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px; /* V2: taller click/tap area */
+  font-weight: 600;
+}
+
+/* ---------- 5. Cards and lists ---------- */
+.card {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.icon-card {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.icon-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.icon-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.icon-card-title {
+  margin-bottom: 8px;
+  font-size: 1.12rem;
+}
+
+/* V2: "Read more" link at the bottom of a facility card */
+.icon-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-card p {
+  flex: 1;
+}
+
+.icon-card-link {
+  margin-top: 12px;
+}
+
+.icon-badge--small {
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border-radius: 12px;
+}
+
+.icon-badge {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: var(--teal-tint);
+  color: var(--teal);
+}
+
+.check-list {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 1em;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.check-list .icon {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--teal);
+}
+
+/* ---------- 6. Page banner and hero ---------- */
+.page-banner,
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.page-banner {
+  padding-block: clamp(72px, 10vw, 128px);
+}
+
+.page-banner img,
+.hero img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* dark overlay so the white text is easy to read */
+.page-banner::after,
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* V2: the right-hand side is darker than before (0.35 → 0.5) for better text contrast */
+  background: linear-gradient(100deg, rgba(27, 42, 65, 0.92) 0%, rgba(27, 42, 65, 0.78) 50%, rgba(27, 42, 65, 0.5) 100%);
+}
+
+.page-banner h1,
+.hero h1 {
+  max-width: 760px;
+  color: #ffffff;
+}
+
+.page-banner .eyebrow,
+.hero .eyebrow {
+  color: var(--teal-on-dark);
+}
+
+.banner-intro {
+  max-width: 640px;
+  margin: 0;
+  font-size: 1.15rem;
+  color: #e6edf5;
+}
+
+.page-banner :focus-visible,
+.hero :focus-visible {
+  outline-color: #ffffff;
+}
+
+/* ---------- 7. Accessibility helpers ---------- */
+
+/* Clear focus outline for keyboard users */
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+
+/* Hidden on screen but still read by screen readers */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 200;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 12px;
+  color: #ffffff;
+}
+
+/* Turn off movement for people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* V2: cards no longer lift on hover either */
+  .icon-card:hover,
+  .package-card:hover,
+  .preview-card:hover {
+    transform: none !important;
+  }
+}
+
+/* V2: message shown for a moment while a page's code is loading */
+.page-loading {
+  min-height: 60vh;
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ---------- 8. Mobile contact bar (V2) ---------- */
+.mobile-contact-bar {
+  display: none;
+}
+
+/* ---------- Responsive layout ---------- */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; }
+
+  /* V2: on narrow screens the text covers the whole photo, so darken it evenly */
+  .page-banner::after,
+  .hero::after {
+    background: rgba(27, 42, 65, 0.82);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .card { padding: 24px 20px; }
+
+  .center-actions .btn { width: 100%; }
+
+  /* ---------- V2: mobile text sizes, spacing and buttons ---------- */
+  :root {
+    --mobile-bar-height: 76px;
+  }
+
+  body {
+    font-size: 1.0625rem; /* 17px instead of 16px */
+    line-height: 1.7;
+  }
+
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.65rem; line-height: 1.25; }
+  h3 { font-size: 1.2rem; }
+
+  .lead { font-size: 1.1rem; }
+
+  .section { padding-block: 56px; }
+
+  .section-head { margin-bottom: 32px; }
+
+  .grid { gap: 20px; }
+
+  .check-list { gap: 12px; }
+
+  .btn {
+    min-height: 52px;
+    font-size: 1.05rem;
+  }
+
+  .btn--large { min-height: 56px; }
+
+  .center-actions { gap: 12px; }
+
+  /* Fixed bar with "Enquire Now" and "Call" at the bottom of the screen */
+  .mobile-contact-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 10px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: #ffffff;
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -6px 20px rgba(27, 42, 65, 0.12);
+  }
+
+  .mobile-contact-bar .btn {
+    min-height: 54px;
+    padding-inline: 12px;
+  }
+
+  /* Leave room at the bottom of the page so the bar never covers the footer */
+  body:has(.mobile-contact-bar) {
+    padding-bottom: var(--mobile-bar-height);
+  }
+}
