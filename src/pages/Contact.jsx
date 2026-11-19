@@ -89,18 +89,18 @@ export default function Contact() {
         <div className="container split">
           <div>
             <p className="eyebrow">Location</p>
-            <h2 id="location-heading">Find us in Dubai</h2>
+            <h2 id="location-heading">Find us in Singapore</h2>
             <p className="lead">
               SkyNest is based in {siteInfo.location}.
             </p>
             <p>
               Because SkyNest is a fictional demonstration business, no exact street address is
-              shown. The map shows the city of Dubai.
+              shown. The map shows the city of Singapore.
             </p>
           </div>
           <iframe
             className="map-frame"
-            title="Map of Dubai, United Arab Emirates"
+            title="Map of Singapore"
             src="https://www.openstreetmap.org/export/embed.html?bbox=55.10%2C25.03%2C55.40%2C25.30&layer=mapnik"
             loading="lazy"
           />
