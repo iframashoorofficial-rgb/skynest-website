@@ -101,7 +101,7 @@ export default function Contact() {
           <iframe
             className="map-frame"
             title="Map of Singapore"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=55.10%2C25.03%2C55.40%2C25.30&layer=mapnik"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=103.60%2C1.20%2C104.05%2C1.48&layer=mapnik"
             loading="lazy"
           />
         </div>
