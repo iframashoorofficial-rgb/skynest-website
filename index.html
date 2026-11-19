@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
+        <script>
+      (function () {
+        var saved = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (saved && saved !== location.href) history.replaceState(null, null, saved);
+      })();
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
