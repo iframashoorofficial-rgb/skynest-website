@@ -26,7 +26,7 @@ const whyChoose = [
 
 const residents = [
   { icon: 'briefcase', title: 'Young professionals', text: 'Starting a new job and want a comfortable home close to the city.' },
-  { icon: 'book', title: 'International students', text: 'Studying in Dubai and need an affordable, furnished place to live.' },
+  { icon: 'book', title: 'International students', text: 'Studying in Singapore and need an affordable, furnished place to live' },
   { icon: 'globe', title: 'Digital nomads & remote workers', text: 'Working online and need fast Wi-Fi and a good place to focus.' },
   { icon: 'users', title: 'Corporate clients', text: 'Companies arranging accommodation for employees relocating for work.' },
 ];
@@ -46,7 +46,7 @@ export default function About() {
       <PageBanner
         eyebrow="About us"
         title="About SkyNest Co-Living Spaces"
-        intro="Modern, affordable and fully furnished homes for people building a new life in Dubai."
+        intro="Modern, affordable and fully furnished homes for people building a new life in Singapore."
         image={images.aboutBanner}
       />
 
@@ -57,7 +57,7 @@ export default function About() {
             <p className="eyebrow">Who we are</p>
             <h2>Flexible housing for modern lives</h2>
             <p className="lead">
-              SkyNest Co-Living Spaces provides shared living and flexible housing in Dubai.
+              SkyNest Co-Living Spaces provides shared living and flexible housing in Singapore.
             </p>
             <p>
               We offer fully furnished rooms in shared homes with high-speed Wi-Fi, shared kitchens
@@ -96,7 +96,7 @@ export default function About() {
               <Icon name="sun" /> Our vision
             </h3>
             <p>
-              To become a trusted first home for people arriving in Dubai – a place where anyone
+              To become a trusted first home for people arriving in Singapore – a place where anyone
               can find flexible, good-value housing and a welcoming community.
             </p>
           </div>
