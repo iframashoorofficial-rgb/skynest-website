@@ -36,7 +36,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-cta">
           <div>
-            <h2 className="footer-cta-title">Ready to find your new home in Dubai?</h2>
+            <h2 className="footer-cta-title">Ready to find your new home in Singapore?</h2>
             <p>Tell us your dates and preferred package, and the SkyNest team will help you.</p>
           </div>
           <div className="footer-cta-actions">
