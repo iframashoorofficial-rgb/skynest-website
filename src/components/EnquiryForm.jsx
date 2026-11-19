@@ -231,7 +231,7 @@ export default function EnquiryForm({ initialPackage = '' }) {
             Phone number <span className="required" aria-hidden="true">*</span>
           </label>
           <input type="tel" autoComplete="tel" inputMode="tel" {...fieldProps('phone', true)} />
-          <p className="field-hint" id="enquiry-phone-hint">For example +971 50 000 0000</p>
+          <p className="field-hint" id="enquiry-phone-hint">For example +65 50 000 0000</p>
           {errorText('phone')}
         </div>
       </div>
