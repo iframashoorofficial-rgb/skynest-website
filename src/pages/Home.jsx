@@ -63,7 +63,7 @@ export default function Home() {
           priority
         />
         <div className="container">
-          <p className="eyebrow">Co-living in Dubai</p>
+          <p className="eyebrow">Co-living in Singapore</p>
           <h1>
             Your Space, <span>Feel at Home.</span>
           </h1>
