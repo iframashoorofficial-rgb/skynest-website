@@ -20,8 +20,8 @@ export const images = {
     alt: 'Bright, modern open-plan living room with sofas and large windows in a SkyNest-style home',
   },
   aboutBanner: {
-    id: '1512453979798-5ea266f8880c',
-    alt: 'Dubai city skyline at sunset, where SkyNest is based',
+    id: '1525625293386-3f8f99389edd',
+    alt: 'Singapore waterfront with Marina Bay Sands and the city beyond, where SkyNest is based',
   },
   packagesBanner: {
     id: '1554995207-c18c203602cb',
